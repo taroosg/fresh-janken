@@ -1,4 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
+import { Head } from "$fresh/runtime.ts";
 
 interface JankenResult {
   userHand: string;
@@ -40,6 +41,9 @@ export const handler: Handlers<JankenResult> = {
 export default function Janken_page({ data }: { data: JankenResult }) {
   return (
     <>
+      <Head>
+        <title>Janken</title>
+      </Head>
       <h1>じゃんけんのページ</h1>
       <h2>じゃんけんをする</h2>
       <form action="#" method="POST">
